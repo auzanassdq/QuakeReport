@@ -1,41 +1,40 @@
 package com.example.quakereport;
 
 /**
- * Created by auzan on 3/7/2019.
+ * Created by auzan on 3/3/2019.
  * Github: @auzanassdq
  */
 public class Earthquake {
-    private String magnitude;
-    private String location;
-    private String date;
 
-    public Earthquake(String magnitude, String location, String date) {
-        this.magnitude = magnitude;
-        this.location = location;
-        this.date = date;
+    private String mUrl;
+    private double mMagnitude;
+    private String mLocation;
+    private long mTimeInMilliseconds;
+
+    public Earthquake(double magnitude, String location, long mTimeInMilliseconds, String url) {
+        this.mMagnitude = magnitude;
+        this.mLocation = location;
+        this.mTimeInMilliseconds = mTimeInMilliseconds;
+        this.mUrl = url;
     }
 
-    public String getMagnitude() {
-        return magnitude;
+    public String getUrl() {
+        return mUrl;
     }
 
-    public void setMagnitude(String magnitude) {
-        this.magnitude = magnitude;
+    public void setUrl(String mUrl) {
+        this.mUrl = mUrl;
+    }
+
+    public double getMagnitude() {
+        return mMagnitude;
     }
 
     public String getLocation() {
-        return location;
+        return mLocation;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
+    public long getTimeInMilliseconds() {
+        return mTimeInMilliseconds;
     }
 }
