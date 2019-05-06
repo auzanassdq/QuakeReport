@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         adapter = new EarthquakeAdapter(this);
+        addItem();
 
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
@@ -35,13 +36,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        addItem();
-
     }
 
     private void addItem() {
         ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
-
         adapter.setEarthquakes(earthquakes);
     }
 
