@@ -13,6 +13,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by auzan on 3/7/2019.
@@ -24,12 +25,12 @@ public class EarthquakeAdapter extends BaseAdapter {
     private final Context context;
     private ArrayList<Earthquake> earthquakes;
 
-    public EarthquakeAdapter(Context context) {
+    EarthquakeAdapter(Context context) {
         this.context = context;
         earthquakes = new ArrayList<>();
     }
 
-    public void setEarthquakes(ArrayList<Earthquake> earthquakes){
+    void setEarthquakes(ArrayList<Earthquake> earthquakes){
         this.earthquakes = earthquakes;
     }
 
@@ -104,12 +105,12 @@ public class EarthquakeAdapter extends BaseAdapter {
     }
 
     private String formatDate(Date dateObject) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy", Locale.US);
         return dateFormat.format(dateObject);
     }
 
     private String formatTime(Date dateObject) {
-        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a", Locale.US);
         return timeFormat.format(dateObject);
     }
 

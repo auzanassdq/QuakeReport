@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private EarthquakeAdapter adapter;
-    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new EarthquakeAdapter(this);
 
-        listView = findViewById(R.id.list);
+        ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
